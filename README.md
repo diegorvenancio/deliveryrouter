@@ -27,12 +27,12 @@ BODY: String representado vetores do mapa, com duas strings para ids do primeiro
 Exemplo:
 http://localhost:8080/maps?mapName=SP
 
-A B 10
-B D 15
-A C 20
-C D 30
-B E 50
-D E 30
+A B 10  
+B D 15  
+A C 20  
+C D 30  
+B E 50  
+D E 30  
 
 
 - Cálculo de Rota /route
