@@ -6,10 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import br.com.drv.deliveryrouter.exception.DeliveryRouterException;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
@@ -61,5 +65,23 @@ public class Vector {
 		this.pointB = pointB;
 	}
 
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
+	}
 
+	/**
+	 * Returns the point name of a neighbor of another point in this vector
+	 * @param name  name of the origin point
+	 * @return name of the neighbor point
+	 */
+	public String getNeighborOf(String name) {
+
+		if (pointA.equals(name)) {
+			return pointB;
+		} else if (pointB.equals(name)) {
+			return pointA;
+		} else {
+			throw new DeliveryRouterException("Neighbor not found!");
+		}
+	}
 }

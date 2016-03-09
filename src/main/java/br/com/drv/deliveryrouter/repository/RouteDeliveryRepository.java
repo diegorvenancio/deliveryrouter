@@ -13,4 +13,6 @@ public interface RouteDeliveryRepository extends PagingAndSortingRepository<Rout
     RouteMap findOne(Long id);
 
     RouteMap save(RouteMap saved);
+    
+    RouteMap findByName(String name);
 }
