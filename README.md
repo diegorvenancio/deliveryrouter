@@ -21,7 +21,7 @@
 
 Feita via webservice com método POST com os seguintes parâmetros:
 
-URL: http://localhost:8080/maps?mapName=<nome do mapa>
+URL: http://localhost:8080/maps?mapName={nome do mapa}  
 BODY: String representado vetores do mapa, com duas strings para ids do primeiro e segundo ponto e um número inteiro para a distância entre estes pontos, separados por espaços. Vetores separados por line break.
 
 Exemplo:
@@ -39,7 +39,7 @@ D E 30
 
 Feito via método GET com os seguintes parâmetros:
 
-URL: http://localhost:8080/route?mapName=<nome mapa>&pointA=<id ponto de partida>&pointB=<id ponto de chegada>&kmPerLitter=<consumo em km/l>&fuelCost=<custo de combustível por km>
+URL: http://localhost:8080/route?mapName={nome mapa}&pointA={id ponto de partida}&pointB={id ponto de chegada}&kmPerLitter={consumo em km/l}&fuelCost={custo de combustível por km}
 
 Exemplo:
 http://localhost:8080/route?mapName=SP&pointA=A&pointB=D&kmPerLitter=10&fuelCost=2.50
