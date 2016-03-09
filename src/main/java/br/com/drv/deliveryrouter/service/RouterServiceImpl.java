@@ -59,6 +59,10 @@ public class RouterServiceImpl implements RouterService {
 		// fetch map and vectors form db
 		RouteMap map = routeRepo.findByName(mapName);
 
+		if (map == null) {
+			throw new DeliveryRouterException("Map name name not found!");
+		}
+		
 		// create a set with distinct nodes
 		Set<String> nodes = new HashSet<>();
 
