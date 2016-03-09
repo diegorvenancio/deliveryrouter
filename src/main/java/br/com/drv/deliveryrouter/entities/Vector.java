@@ -1,12 +1,9 @@
 package br.com.drv.deliveryrouter.entities;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 import lombok.Data;
@@ -27,6 +24,10 @@ public class Vector {
 
 	@NonNull
 	private Long distance;
+
+	private String pointA;
+
+	private String pointB;
 
 	public Long getId() {
 		return id;
@@ -59,23 +60,6 @@ public class Vector {
 	public void setPointB(String pointB) {
 		this.pointB = pointB;
 	}
-
-	public RouteMap getRouteMap() {
-		return routeMap;
-	}
-
-	public void setRouteMap(RouteMap routeMap) {
-		this.routeMap = routeMap;
-	}
-
-	private String pointA;
-	
-	private String pointB;
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="map_id")
-	private RouteMap routeMap;
-	
 
 
 }

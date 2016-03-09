@@ -1,7 +1,9 @@
 package br.com.drv.deliveryrouter.service;
 
+import br.com.drv.deliveryrouter.entities.RouteMap;
+
 public interface RouterService {
 
-	String createRouteMap(String mapName);
+	void createRouteMap(RouteMap rm);
 	
 }

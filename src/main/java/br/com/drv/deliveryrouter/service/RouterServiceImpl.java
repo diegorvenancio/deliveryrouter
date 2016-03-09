@@ -16,44 +16,49 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class RouterServiceImpl implements RouterService {
 
-	
+	// @Autowired
+	// protected VectorRepository vectorRepo;
+
 	@Autowired
-    protected VectorRepository vectorRepo;
-	
-//	@Autowired
-//    protected RouteDeliveryRepository vectorRepo;
-	
-	
+	protected RouteDeliveryRepository vectorRepo;
+
 	@Override
-	public String createRouteMap(String mapName){
-		
-		Calendar calendar = Calendar.getInstance();
-		Date date = new Date();
-		calendar.setTime(date);
-		
-		RouteMap map = new RouteMap();
-		map.setName(mapName);
-		
-		Vector v = new Vector();
-		v.setDistance(10L);
-		v.setRouteMap(map);
-		v.setPointA("A");
-		v.setPointB("B");
-		
-		vectorRepo.save(v);
-//		vectorRepo.save(map);
-		
-//		List<Match> list = matchRepository.findAll();
-//		StringBuffer sb = new StringBuffer();
-//		
-//		for (Match mt : list) {
-//			
-//			sb.append(mt.toString());
-//		}
-//		
-//		return sb.toString();
-		
-		return "JAX-WS + Spring!";
+	public void createRouteMap(RouteMap rm) {
+
+		// Calendar calendar = Calendar.getInstance();
+		// Date date = new Date();
+		// calendar.setTime(date);
+
+		// RouteMap map = new RouteMap();
+		// map.setName(mapName);
+		//
+		// Vector v = new Vector();
+		// v.setDistance(10L);
+		// v.setPointA("A");
+		// v.setPointB("B");
+		//
+		// Vector v2 = new Vector();
+		// v2.setDistance(10L);
+		// v2.setPointA("B");
+		// v2.setPointB("C");
+		//
+		// map.getVectors().add(v);
+		// map.getVectors().add(v2);
+
+		// vectorRepo.save(v);
+
+		vectorRepo.save(rm);
+
+		// List<Match> list = matchRepository.findAll();
+		// StringBuffer sb = new StringBuffer();
+		//
+		// for (Match mt : list) {
+		//
+		// sb.append(mt.toString());
+		// }
+		//
+		// return sb.toString();
+
 	}
 
 }

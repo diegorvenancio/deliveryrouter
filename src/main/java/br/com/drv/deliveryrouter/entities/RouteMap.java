@@ -1,10 +1,15 @@
 package br.com.drv.deliveryrouter.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 import lombok.Data;
@@ -24,19 +29,19 @@ public class RouteMap {
 	private Long id;
 
 	@NonNull
-	@Column(unique=true, nullable=false)
+	@Column(unique = true, nullable = false)
 	private String name;
-	
-//	@OneToMany
-//	private List<Distancia> distancias;
-//
-//	public List<Distancia> getDistancias() {
-//		return distancias;
-//	}
-//
-//	public void setDistancias(List<Distancia> distancias) {
-//		this.distancias = distancias;
-//	}
+
+	@OneToMany(cascade = CascadeType.ALL)
+	List<Vector> vectors = new ArrayList<>();
+
+	public List<Vector> getVectors() {
+		return vectors;
+	}
+
+	public void setVectors(List<Vector> vectors) {
+		this.vectors = vectors;
+	}
 
 	public Long getId() {
 		return id;
